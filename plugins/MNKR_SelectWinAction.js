@@ -1,4 +1,4 @@
-﻿/*:
+/*:
  * @plugindesc 指定変数の値により、戦闘勝利時のSVアクター動作を指定できます。
  * @author munokura
  *
