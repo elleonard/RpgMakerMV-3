@@ -66,7 +66,7 @@
 	var switchId = Number(parameters['Switch Id'] || 11);
 	var selectAction = String(parameters['Select Action'] || 'dying');
 
-	var _Game_Actor_performVictory = Game_Actor.prototype.performVictory;
+	const _Game_Actor_performVictory = Game_Actor.prototype.performVictory;
 	Game_Actor.prototype.performVictory = function() {
 		if($gameSwitches.value(switchId) && this.canMove()) {
 				this.requestMotion(selectAction);
