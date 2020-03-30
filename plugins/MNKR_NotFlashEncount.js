@@ -27,13 +27,13 @@
 			if (n === 2) {
 				$gameScreen.setZoom(zoomX, zoomY, 1);
 				this.snapForBattleBackground();
-			}
+			};
 			$gameScreen.setZoom(zoomX, zoomY, q);
 			if (n === Math.floor(speed / 2)) {
 				BattleManager.playBattleBgm();
 				this.startFadeOut(this.fadeSpeed());
-			}
-		}
+			};
+		};
 	};
 
 })();
