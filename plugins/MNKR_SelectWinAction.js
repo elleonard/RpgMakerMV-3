@@ -60,7 +60,7 @@
 		16: 'sleep'
 	}
 
-	var _Game_Actor_performVictory = Game_Actor.prototype.performVictory;
+	const _Game_Actor_performVictory = Game_Actor.prototype.performVictory;
 	Game_Actor.prototype.performVictory = function() {
 		var motionId = $gameVariables.value(variableId);
 		if(motionId !== 0 && this.canMove()) {
