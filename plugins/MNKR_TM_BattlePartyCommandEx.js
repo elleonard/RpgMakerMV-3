@@ -79,7 +79,7 @@ Imported.TMBattleCommandEx = true;
 		if (PartyCommandAutoResize) {
 			var wh = this.fittingHeight(this.numVisibleRows());
 			this.move(this.x, Graphics.boxHeight - wh, this.windowWidth(), wh);
-		}
+		};
 		_Window_PartyCommand_refresh.call(this);
 	};
 
