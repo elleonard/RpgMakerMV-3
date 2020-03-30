@@ -58,7 +58,7 @@
 		14: 'dying',
 		15: 'abnormal',
 		16: 'sleep'
-	}
+	};
 
 	const _Game_Actor_performVictory = Game_Actor.prototype.performVictory;
 	Game_Actor.prototype.performVictory = function() {
