@@ -37,7 +37,7 @@
                   enemy.hide();
                 } else {
                   condition = false;
-                }
+                };
                 this._enemies.push(enemy);
             }, this);
             this.makeUniqueNames();
