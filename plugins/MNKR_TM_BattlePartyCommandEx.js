@@ -74,7 +74,7 @@ Imported.TMBattleCommandEx = true;
 		};
 	};
 
-	var _Window_PartyCommand_refresh = Window_PartyCommand.prototype.refresh;
+	const _Window_PartyCommand_refresh = Window_PartyCommand.prototype.refresh;
 	Window_PartyCommand.prototype.refresh = function() {
 		if (PartyCommandAutoResize) {
 			var wh = this.fittingHeight(this.numVisibleRows());
