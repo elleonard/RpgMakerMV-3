@@ -58,6 +58,8 @@
 var Imported = Imported || {};
 Imported.TMBattleCommandEx = true;
 (function() {
+	'use strict';
+
 	var parameters = PluginManager.parameters('MNKR_TM_BattlePartyCommandEx');
 	var PartyBasicVisibleRows = +(parameters['PartyBasicVisibleRows'] || 4);
 	var PartyMaxVisibleRows = +(parameters['PartyMaxVisibleRows'] || 6);
@@ -90,4 +92,5 @@ Imported.TMBattleCommandEx = true;
 	Scene_Battle.prototype.startPartyCommandSelection = function() {
 		_Scene_Battle_startPartyCommandSelection.call(this);
 	};
+
 })();
