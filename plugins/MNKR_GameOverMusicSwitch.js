@@ -24,7 +24,7 @@
 	var parameters = PluginManager.parameters('MNKR_GameOverMusicSwitch');
 	var switchId = Number(parameters['Switch Id'] || 11);
 
-	var _Scene_Gameover_playGameoverMusic = Scene_Gameover.prototype.playGameoverMusic
+	const _Scene_Gameover_playGameoverMusic = Scene_Gameover.prototype.playGameoverMusic
 	Scene_Gameover.prototype.playGameoverMusic = function() {
 		if($gameSwitches.value(switchId)) {
 		} else {
