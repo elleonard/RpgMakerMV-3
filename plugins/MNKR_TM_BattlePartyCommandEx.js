@@ -71,7 +71,7 @@ Imported.TMBattleCommandEx = true;
 			return Math.min(result, PartyMaxVisibleRows);
 			} else {
 			return PartyBasicVisibleRows;
-		}
+		};
 	};
 
 	var _Window_PartyCommand_refresh = Window_PartyCommand.prototype.refresh;
@@ -86,7 +86,7 @@ Imported.TMBattleCommandEx = true;
 	//----------------------------------------------------------------------------
 	// Scene_Battle
 	//
-	var _Scene_Battle_startPartyCommandSelection = Scene_Battle.prototype.startPartyCommandSelection;
+	const _Scene_Battle_startPartyCommandSelection = Scene_Battle.prototype.startPartyCommandSelection;
 	Scene_Battle.prototype.startPartyCommandSelection = function() {
 		_Scene_Battle_startPartyCommandSelection.call(this);
 	};
