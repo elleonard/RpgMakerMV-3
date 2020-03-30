@@ -26,7 +26,7 @@
     var parameters = PluginManager.parameters('MNKR_EnemyIcon');
     var defaultIcon = parseInt(parameters['Default Icon'] || 16);
 
-    var _Window_BattleEnemy_drawItem = Window_BattleEnemy.prototype.drawItem
+    const _Window_BattleEnemy_drawItem = Window_BattleEnemy.prototype.drawItem
     Window_BattleEnemy.prototype.drawItem = function(index) {
         this.resetTextColor();
         var enemy = this._enemies[index];
@@ -39,7 +39,7 @@
             this.drawText(name, rect.x + iconBoxWidth, rect.y, rect.width - iconBoxWidth);
         } else {
             _Window_BattleEnemy_drawItem.apply(this, arguments);
-        }
+        };
     };
     
 })();
