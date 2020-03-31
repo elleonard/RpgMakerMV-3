@@ -21,7 +21,7 @@
  * @default 3
  *
  * @help
- * MOG_BattleHud のパッチプラグインです。
+ * MOG_BattleHud (v5.04)用のパッチプラグインです。
  * 動作にはMOG_BattleHudが必要です。
  * このプラグインはプラグイン管理でMOG_BattleHudの下に配置してください。
  * 
