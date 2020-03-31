@@ -45,15 +45,14 @@
 //==============================
 	const _Battle_Hud_create_face = Battle_Hud.prototype.create_face;
 	Battle_Hud.prototype.create_face = function() {
-			if (String(Moghunter.bhud_face_visible) != "true") {
-				return;
-			};
-			this.removeChild(this._face);
+			// if (String(Moghunter.bhud_face_visible) != "true") {
+			// 	return;
+			// };
+			// this.removeChild(this._face);
 			if (!this._battler) {
 				return;
 			};
-			var actorFaceId = this._battler._actorId;
-			if($gameSwitches.value(switchId) && (actorFaceId === beforeFaceId)){
+			if($gameSwitches.value(switchId) && (this._battler._actorId === beforeFaceId)){
 				this._face = new Sprite(ImageManager.loadBHud("Face_" + afterFaceId));
 				this._face.anchor.x = 0.5;
 				this._face.anchor.y = 0.5;
