@@ -35,10 +35,13 @@
 (function(){
 	'use strict';
 
-	var parameters = PluginManager.parameters('MNKR_MOG_BattleHud_ChangeActor');
-	var switchId = Number(parameters['Switch Id'] || 11);
-	var beforeFaceId = Number(parameters['Before Face Id'] || 1);
-	var afterFaceId = String(parameters['After Face Id'] || 3);
+	var parameters =    PluginManager.parameters('MNKR_MOG_BattleHud_ChangeActor');
+	var switchId1 =     Number(parameters['Switch Id 1'] || 11);
+	var beforeFaceId1 = Number(parameters['Before Face Id 1'] || 1);
+	var afterFaceId1 =  String(parameters['After Face Id 1'] || 3);
+	var switchId2 =     Number(parameters['Switch Id 2'] || 11);
+	var beforeFaceId2 = Number(parameters['Before Face Id 2'] || 1);
+	var afterFaceId2 =  String(parameters['After Face Id 2'] || 3);
 
 //==============================
 // * Create Face
