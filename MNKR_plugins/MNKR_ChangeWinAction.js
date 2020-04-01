@@ -1,4 +1,4 @@
-/*:ja
+﻿/*:
  * @plugindesc 指定スイッチがONの場合、戦闘勝利時にSVアクターが指定動作をします。
  * @author munokura
  *
