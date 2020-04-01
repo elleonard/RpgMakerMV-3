@@ -45,10 +45,10 @@
 //==============================
 	const _Battle_Hud_create_face = Battle_Hud.prototype.create_face;
 	Battle_Hud.prototype.create_face = function() {
-			// if (String(Moghunter.bhud_face_visible) != "true") {
-			// 	return;
-			// };
-			// this.removeChild(this._face);
+			if (String(Moghunter.bhud_face_visible) != "true") {
+				return;
+			};
+			this.removeChild(this._face);
 			if (!this._battler) {
 				return;
 			};
