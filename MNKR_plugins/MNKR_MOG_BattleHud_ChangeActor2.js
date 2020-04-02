@@ -67,7 +67,7 @@
 		for (var i = 0; i < count; i++) {
 			faceList = changeFaceList[i];
 			if (faceList && faceList.beforeFaceId === faceId && faceList.afterFaceId) {
-				return "Face_" + afterFaceId;
+				faceId = faceList.afterFaceId;
 			};
 		};
 		return "Face_" + faceId;
