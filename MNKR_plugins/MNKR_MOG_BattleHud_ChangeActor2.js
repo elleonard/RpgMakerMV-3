@@ -6,7 +6,7 @@
  * @text 変更組合せ
  * @desc 変更組合せ
  * @type struct<changeFaceList>[]
- * @default
+ * @default ["{\"switchId\":\"11\",\"beforeFaceId\":\"1\",\"afterFaceId\":\"2\"}"]
  *
  * @help
  * MOG_BattleHud (v5.04)用のパッチプラグインです。
@@ -42,7 +42,7 @@
 (function(){
 	'use strict';
 
-	var parameters =    PluginManager.parameters('MNKR_MOG_BattleHud_ChangeActor');
+	var parameters = PluginManager.parameters('MNKR_MOG_BattleHud_ChangeActor2');
 
 	var param = JSON.parse(JSON.stringify(parameters, function(key, value) {
         try {
@@ -56,7 +56,10 @@
         }
     }));
 
-    var changeFaceList = param.changeFaceList || [];
+    var changeFaceList = param["Change Face"] || [];
+
+	console.log(param);
+	console.log(changeFaceList);
 
 	function changeFace(faceId) {
         var faceList;
