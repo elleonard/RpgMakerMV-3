@@ -16,8 +16,8 @@
  * 発動スイッチがONの時、アクターの表示画像を指定番号画像に切り替えます。
  *
  * 利用規約
- *   MOG_BattleHudの利用規約と同等とします。
- *   https://atelierrgss.wordpress.com/about/
+ *	 MOG_BattleHudの利用規約と同等とします。
+ *	 https://atelierrgss.wordpress.com/about/
  */
  /*~struct~changeFaceList:
  * @param switchId
@@ -45,30 +45,30 @@
 	var parameters = PluginManager.parameters('MNKR_MOG_BattleHud_ChangeActor2');
 
 	var param = JSON.parse(JSON.stringify(parameters, function(key, value) {
-        try {
-            return JSON.parse(value);
-        } catch (e) {
-            try {
-                return eval(value);
-            } catch (e) {
-                return value;
-            }
-        }
-    }));
+		try {
+			return JSON.parse(value);
+		} catch (e) {
+			try {
+				return eval(value);
+			} catch (e) {
+				return value;
+			}
+		}
+	}));
 
-    var changeFaceList = param["Change Face"] || [];
+	var changeFaceList = param["Change Face"] || [];
 
 	console.log(param);
 	console.log(changeFaceList);
 
 	function changeFace(faceId) {
-        var faceList;
-        var count = changeFaceList.length;
-        for (var i = 0; i < count; i++) {
-            faceList = changeFaceList[i];
-            if (faceList && faceList.beforeFaceId === faceId && faceList.afterFaceId) {
-                return "Face_" + afterFaceId;
-            };
+		var faceList;
+		var count = changeFaceList.length;
+		for (var i = 0; i < count; i++) {
+			faceList = changeFaceList[i];
+			if (faceList && faceList.beforeFaceId === faceId && faceList.afterFaceId) {
+				return "Face_" + afterFaceId;
+			};
 		};
 		return "Face_" + faceId;
 	};
