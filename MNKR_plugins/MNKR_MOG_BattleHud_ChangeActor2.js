@@ -66,8 +66,8 @@
             if (faceList && faceList.beforeFaceId === faceId && faceList.afterFaceId) {
                 return "Face_" + afterFaceId;
             };
-		return "Face_" + faceId;
 		};
+		return "Face_" + faceId;
 	};
 
 //==============================
