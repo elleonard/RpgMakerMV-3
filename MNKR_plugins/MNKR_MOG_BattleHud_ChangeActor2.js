@@ -5,7 +5,7 @@
  * @param Change Face
  * @text 変更組合せ
  * @desc 変更組合せ
- * @type struct<changeFace>[]
+ * @type struct<changeFaceList>[]
  * @default
  *
  * @help
@@ -19,7 +19,7 @@
  *   MOG_BattleHudの利用規約と同等とします。
  *   https://atelierrgss.wordpress.com/about/
  */
- /*~struct~changeFace:
+ /*~struct~changeFaceList:
  * @param switchId
  * @text 発動スイッチID
  * @type switch
@@ -43,21 +43,32 @@
 	'use strict';
 
 	var parameters =    PluginManager.parameters('MNKR_MOG_BattleHud_ChangeActor');
-	var switchId1 =     Number(parameters['Switch Id 1'] || 11);
-	var beforeFaceId1 = Number(parameters['Before Face Id 1'] || 1);
-	var afterFaceId1 =  String(parameters['After Face Id 1'] || 3);
-	var switchId2 =     Number(parameters['Switch Id 2'] || 11);
-	var beforeFaceId2 = Number(parameters['Before Face Id 2'] || 1);
-	var afterFaceId2 =  String(parameters['After Face Id 2'] || 3);
+
+	var param = JSON.parse(JSON.stringify(parameters, function(key, value) {
+        try {
+            return JSON.parse(value);
+        } catch (e) {
+            try {
+                return eval(value);
+            } catch (e) {
+                return value;
+            }
+        }
+    }));
+
+    var changeFaceList = param.changeFaceList || [];
 
 	function changeFace(faceId) {
-		if ($gameSwitches.value(switchId1) && (faceId === beforeFaceId1)) {
-			return "Face_" + afterFaceId1;
-		} else if ($gameSwitches.value(switchId2) && (faceId === beforeFaceId2)) {
-			return "Face_" + afterFaceId2;
+        var faceList;
+        var count = changeFaceList.length;
+        for (var i = 0; i < count; i++) {
+            faceList = changeFaceList[i];
+            if (faceList && faceList.beforeFaceId === faceId && faceList.afterFaceId) {
+                return "Face_" + afterFaceId;
+            };
+		return "Face_" + faceId;
 		};
-	return "Face_" + faceId;
-    };
+	};
 
 //==============================
 // * Create Face
