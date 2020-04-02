@@ -14,6 +14,8 @@
  * このプラグインはプラグイン管理でMOG_BattleHudの下に配置してください。
  * 
  * 発動スイッチがONの時、アクターの表示画像を指定番号画像に切り替えます。
+ * 設定したリストは上から順に処理されるため、
+ * 重複する設定は下にあるものが反映されます。
  *
  * 利用規約
  *	 MOG_BattleHudの利用規約と同等とします。
@@ -66,9 +68,9 @@
 		var count = changeFaceList.length;
 		for (var i = 0; i < count; i++) {
 			faceList = changeFaceList[i];
-			if (faceList && faceList.beforeFaceId === faceId && faceList.afterFaceId) {
-				faceId = faceList.afterFaceId;
-			};
+				if (($gameSwitches.value(faceList.switchId)) && faceList && faceList.beforeFaceId === faceId && faceList.afterFaceId) {
+					faceId = faceList.afterFaceId;
+				};
 		};
 		return "Face_" + faceId;
 	};
