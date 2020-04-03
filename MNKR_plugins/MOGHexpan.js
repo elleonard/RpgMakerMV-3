@@ -53,11 +53,11 @@ var MOGHupdateaddnum = 0;
 var _MOGH_pluginCommand = Game_Interpreter.prototype.pluginCommand;
 Game_Interpreter.prototype.pluginCommand = function(command, args) {
 	_MOGH_pluginCommand.call(this, command, args);
-	if(command === 'MOGH'){
+	if(command === 'MOGH') {
 		var valueid = Number(args[1] || 0);
 		var addnum = Number(args[2] || 0);
 		MOGHupdateactorId = $gameVariables.value(valueid);
-		switch(args[0]){
+		switch(args[0]) {
 			case 'update':
 				MOGHupdateaddnum = MOGHupdateactorId + addnum;
 			break;
@@ -68,7 +68,7 @@ Game_Interpreter.prototype.pluginCommand = function(command, args) {
 //一応フレームアニメーションの処理内容はフックで残す。
 var _MOGH_update_face_animation = Battle_Hud.prototype.update_face_animation;
 Battle_Hud.prototype.update_face_animation = function() {
-	if (MOGHupdateaddnum > 0 && MOGHupdateactorId === this._battler._actorId){
+	if (MOGHupdateaddnum > 0 && MOGHupdateactorId === this._battler._actorId) {
 		this.create_faceMOGH();
 	};
 	_MOGH_update_face_animation.call(this);
