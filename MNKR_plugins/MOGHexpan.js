@@ -3,8 +3,8 @@
 //=============================================================================
 
 /*:ja
- * @plugindesc ver1.03 MOG_BattleHud(v5.04)拡張
- * @author まっつＵＰ (改変:munokura)
+ * @plugindesc ver1.02 MOG_BattleHud(v5.04)拡張
+ * @author まっつＵＰ (改変:munokura v1.03)
  *
  * @help
  * RPGで笑顔を・・・
@@ -107,6 +107,5 @@ Battle_Hud.prototype.create_faceMOGH = function() {
 	this.refresh_position();
 	MOGHupdateactorId = 0;
 	MOGHupdateaddnum = 0;
-	this.update();
 
 };
