@@ -107,5 +107,6 @@ Battle_Hud.prototype.create_faceMOGH = function() {
 	this.refresh_position();
 	MOGHupdateactorId = 0;
 	MOGHupdateaddnum = 0;
+	this.update();
 
 };
