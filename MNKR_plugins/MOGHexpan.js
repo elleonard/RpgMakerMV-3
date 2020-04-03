@@ -1,6 +1,6 @@
-//=============================================================================
+//============================================================================
 // MOGHexpan.js
-//=============================================================================
+//============================================================================
 
 /*:ja
  * @plugindesc ver1.01 MOG_BattleHud(v4.0)拡張
@@ -26,15 +26,17 @@
  * その戦闘中のみ適用されます。
  * （次の戦闘開始時は再び初期設定の画像を表示）
  * 
- * 例：変数ID20の値を1にした後
+ * 例：
+ * MOGH update 20 100
+ * 変数ID20の値を1にした後
  * 変数ID20の値と同じIDのアクターの戦闘フェイス画像をFace_ 101.pngにする。
  * (この時、ID1のアクターが指定される)
- * MOGH update 20 100
  * 
  * ＜戦闘フェイス画像を戦闘開始時のものにする場合＞
  * （プラグインコマンド）
- * 例：変数ID20の値と同じIDのアクターの戦闘フェイス画像を戦闘開始時のものに戻す。
  * MOGH update 20
+ * 例：
+ * 変数ID20の値と同じIDのアクターの戦闘フェイス画像を戦闘開始時のものに戻す。
  * 
  * 利用規約(2020/04/03変更)：
  * この作品は マテリアル・コモンズ・ブルー・ライセンスの下に提供されています。
@@ -51,42 +53,52 @@ var MOGHupdateaddnum = 0;
 
 var _MOGH_pluginCommand = Game_Interpreter.prototype.pluginCommand
 Game_Interpreter.prototype.pluginCommand = function(command, args) {
-    _MOGH_pluginCommand.call(this, command, args);
-    if(command === 'MOGH'){
-        var valueid = Number(args[1] || 0);
-        var addnum = Number(args[2] || 0);
-        MOGHupdateactorId = $gameVariables.value(valueid);
-        switch(args[0]){
-            case 'update':
-                MOGHupdateaddnum = MOGHupdateactorId + addnum;
-            break;
-        }
-    }
+	_MOGH_pluginCommand.call(this, command, args);
+	if(command === 'MOGH'){
+		var valueid = Number(args[1] || 0);
+		var addnum = Number(args[2] || 0);
+		MOGHupdateactorId = $gameVariables.value(valueid);
+		switch(args[0]){
+			case 'update':
+				MOGHupdateaddnum = MOGHupdateactorId + addnum;
+			break;
+		};
+	};
 };
 
 //一応フレームアニメーションの処理内容はフックで残す。
 var _MOGH_update_face_animation = Battle_Hud.prototype.update_face_animation;
 Battle_Hud.prototype.update_face_animation = function() {
-    if(MOGHupdateaddnum > 0 && MOGHupdateactorId === this._battler._actorId){
-        this.create_faceMOGH();
-    }
+	if(MOGHupdateaddnum > 0 && MOGHupdateactorId === this._battler._actorId){
+		this.create_faceMOGH();
+	};
 	_MOGH_update_face_animation.call(this);
 };
 
 Battle_Hud.prototype.create_faceMOGH = function() {
-    if (String(Moghunter.bhud_face_visible) != "true") {return};
-    var index = this.children.indexOf(this._face);
+	if (String(Moghunter.bhud_face_visible) != "true") {
+		return;
+	};
+
+	var index = this.children.indexOf(this._face);
 	this.removeChild(this._face);
 	this._face = new Sprite(ImageManager.loadBHud("Face_" + MOGHupdateaddnum));
 	this._face.anchor.x = 0.5;
 	this._face.anchor.y = 0.5;
 	this._face_data = [0,0,false,false,false,-1];
-	if (String(Moghunter.bhud_face_shake) === "true") {this._face_data[2] = true}
-	if (String(Moghunter.bhud_face_animated) === "true") {this._face_data[4] = true}
-	this._battler._bhud_face_data = [0,0,0,0]
+
+	if (String(Moghunter.bhud_face_shake) === "true") {
+		this._face_data[2] = true;
+	};
+
+	if (String(Moghunter.bhud_face_animated) === "true") {
+		this._face_data[4] = true;
+	};
+
+	this._battler._bhud_face_data = [0,0,0,0];
 	this.addChildAt(this._face,index);
-    this.refresh_position();
-    MOGHupdateactorId = 0;
-    MOGHupdateaddnum = 0;
+	this.refresh_position();
+	MOGHupdateactorId = 0;
+	MOGHupdateaddnum = 0;
 };
 
