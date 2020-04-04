@@ -3,8 +3,8 @@
 //=============================================================================
 
 /*:ja
- * @plugindesc ver1.02 MOG_BattleHud(v5.04)拡張
- * @author まっつＵＰ (改変:munokura v1.02)
+ * @plugindesc ver1.03 MOG_BattleHud(v5.04)拡張
+ * @author まっつＵＰ (改変:munokura)
  *
  * @help
  * RPGで笑顔を・・・
