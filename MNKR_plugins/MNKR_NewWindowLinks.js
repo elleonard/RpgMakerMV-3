@@ -4,14 +4,19 @@
  *
  * @help
  * プラグインコマンド
- * MNKR_NewWindow http://fungamemake.com/
- *   リンク先を新しいウィンドウに開きます。
+ *   MNKR_NewWindow URL
+ *     URLを新しいウィンドウに開きます。
+ *
+ *   使用例
+ *     MNKR_NewWindow http://fungamemake.com/
+ *
  *
  * 謝辞
  *   コードの主要部分はトリアコンタン氏が公開しているコードです。
  *   https://gist.github.com/triacontane/8992baccfb35f985ec93107b8ced6c30
  *   トリアコンタン氏の活動に感謝申し上げます。
- * 
+ *
+ *
  * 利用規約
  *   作者としての著作権を放棄します。
  *   パブリックドメインです。
