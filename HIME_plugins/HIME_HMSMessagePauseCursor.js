@@ -1,7 +1,7 @@
 /*:
  * @title HMS: Message Pause Cursor
  * @author Hime --> HimeWorks (http://himeworks.com)
- * @version 1.2
+ * @version 1.2.1
  * @date Dec 21, 2015
  * @filename HIME_HMSMessagePauseCursor.js
  * @url http://himeworks.com/2015/12/message-pause-cursor/
@@ -48,6 +48,8 @@
  *
  * == Change Log ==
  *
+ * 1.2.1 - Apr 11, 2020 by Renko
+ *  * from loadSystemImages function (line 157) to loadSystemWindowImage
  * 1.2 - Dec 21, 2015
  *  * renamed to HMSMessagePauseCursor
  *  * added support for 'end' text align
@@ -140,7 +142,7 @@
 /*:ja
  * @title HMS: Message Pause Cursor
  * @author Hime --> HimeWorks (http://himeworks.com)
- * @version 1.2
+ * @version 1.2.1
  * @date Dec 21, 2015
  * @filename HIME_HMSMessagePauseCursor.js
  * @url http://himeworks.com/2015/12/message-pause-cursor/
@@ -194,6 +196,8 @@
  *
  * == Change Log ==
  *
+ * 1.2.1 - Apr 11, 2020 by Renko
+ *  * from loadSystemImages function (line 157) to loadSystemWindowImage
  * 1.2 - Dec 21, 2015
  *  * renamed to HMSMessagePauseCursor
  *  * added support for 'end' text align
@@ -313,9 +317,9 @@ TH.MessagePauseCursor = TH.MessagePauseCursor || {};
   $.numFrames = Math.floor($.params["Number of Frames"])
   $.align = $.params["Default Align"].toLowerCase();
 
-  var TH_SceneBoot_loadSystemImages = Scene_Boot.prototype.loadSystemImages;
-  Scene_Boot.prototype.loadSystemImages = function () {
-    TH_SceneBoot_loadSystemImages.call(this);
+  var TH_SceneBoot_loadSystemWindowImage = Scene_Boot.prototype.loadSystemWindowImage;
+  Scene_Boot.prototype.loadSystemWindowImage = function () {
+    TH_SceneBoot_loadSystemWindowImage.call(this);
     ImageManager.loadSystem($.filename);
   };
 
