@@ -1,6 +1,9 @@
 (function () {
 
     'use strict';
+    const originalPluginName = 'SceneFormation';
+    const originalPluginParameters = PluginManager.parameters(originalPluginName);
+    const statusBlockWidth = Number(originalPluginParameters['Status Block Width'] || 372);
 
     Window_FormationStatus.prototype.drawParameters = function (x, y) {
         var blockWidth = statusBlockWidth / 2 - 6;
