@@ -1,12 +1,8 @@
-var Imported = Imported || {};
-Imported['SceneFormation'] = 1.092;
-
 (function () {
 
     'use strict';
 
     Window_FormationStatus.prototype.drawParameters = function (x, y) {
-        var lineHeight = this.lineHeight();
         var blockWidth = statusBlockWidth / 2 - 6;
         var paramWidth = blockWidth / 3;
 
