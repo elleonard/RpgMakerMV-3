@@ -552,6 +552,9 @@ function Scene_Formation() {
         this.initialize.apply(this, arguments);
     };
 
+    // グローバルに公開する
+    window[Window_FormationStatus.name] = Window_FormationStatus;
+
     Window_FormationStatus.prototype = Object.create(Window_Base.prototype);
     Window_FormationStatus.prototype.constructor = Window_FormationStatus;
 
